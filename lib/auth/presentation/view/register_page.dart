@@ -1,9 +1,9 @@
 import 'package:batareykin/auth/presentation/view/login_page.dart';
 import 'package:flutter/material.dart';
 
-import '../../../design/widgets/buttons.dart';
-import '../../../design/widgets/custom_text_field.dart';
-import '../../../design/widgets/texts.dart';
+import '../../../_design/widgets/buttons.dart';
+import '../../../_design/widgets/custom_text_field.dart';
+import '../../../_design/widgets/texts.dart';
 import '../../../home_page.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -16,8 +16,10 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   String nameError = '';
   String passwordError = '';
+  String emailError = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +33,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 errorText: nameError,
                 controller: nameController,
                 hintText: 'Имя',
+              ),
+              const SizedBox(height: 16),
+              CustomTextField(
+                errorText: emailError,
+                controller: emailController,
+                hintText: 'email',
               ),
               const SizedBox(height: 16),
               CustomTextField(
@@ -52,7 +60,7 @@ class _RegisterPageState extends State<RegisterPage> {
               CustomFilledButton(
                 text: 'Зарегистрироваться', 
                 onTap: ()async{
-                  if (nameController.text == '' || passwordController.text == ''){
+                  if (nameController.text == '' || passwordController.text == '' || emailController.text == ''){
                     setState(() {
                       if (nameController.text == ''){
                         nameError = 'Придумайте имя пользователя';
@@ -65,6 +73,12 @@ class _RegisterPageState extends State<RegisterPage> {
                       }
                       else{
                         passwordError = '';
+                      }
+                      if (emailController.text == ''){
+                        emailError = 'Введите ваш email';
+                      }
+                      else{
+                        emailError = '';
                       }
                     });
                   }

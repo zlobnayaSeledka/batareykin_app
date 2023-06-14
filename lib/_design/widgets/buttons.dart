@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/color_theme.dart';
-import '../../theme/other_parameters.dart';
+import '../../design/other_parameters.dart';
+import '../color_theme.dart';
+import 'box_with_data.dart';
+import 'texts.dart';
 
 class CustomFilledButton extends StatelessWidget {
   final double? height;
@@ -65,6 +67,38 @@ class CustomBackButton extends StatelessWidget {
         Icons.arrow_back,
         color: ColorTheme.mainTextColor,
         size: 30,
+      ),
+    );
+  }
+}
+
+class MenuActionsButtons extends StatelessWidget {
+  final String title;
+  final Function onTap;
+  const MenuActionsButtons({Key? key, required this.title, required this.onTap}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal:20.0),
+      child: GestureDetector(
+        onTap: (){
+          onTap();
+        },
+        child: BoxWithData(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                CustomMidleText(
+                  text: title,
+                  size: 20,
+                )
+              ],
+            ),
+          ) 
+        ),
       ),
     );
   }

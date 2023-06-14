@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../color_theme.dart';
-import '../other_parameters.dart';
+import '../design_parameters.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;

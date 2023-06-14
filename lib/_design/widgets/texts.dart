@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/color_theme.dart';
-import '../../theme/other_parameters.dart';
+import '../color_theme.dart';
+import '../design_parameters.dart';
 
 class CustomLinkText extends StatelessWidget {
   final String text;

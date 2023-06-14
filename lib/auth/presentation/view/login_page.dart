@@ -1,20 +1,25 @@
 import 'package:batareykin/auth/presentation/view/register_page.dart';
 import 'package:flutter/material.dart';
 
-import '../../../design/widgets/buttons.dart';
-import '../../../design/widgets/custom_text_field.dart';
-import '../../../design/widgets/texts.dart';
+import '../../../_design/widgets/buttons.dart';
+import '../../../_design/widgets/custom_text_field.dart';
+import '../../../_design/widgets/texts.dart';
 import '../../../home_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
-  
+
   @override
-  Widget build(BuildContext context) {
-    TextEditingController nameController = TextEditingController();
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController nameController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
     String passwordError = '';
     String nameError = '';
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -38,7 +43,7 @@ class LoginPage extends StatelessWidget {
                 onTap:(){
                   Navigator.pushAndRemoveUntil(
                     context, 
-                    MaterialPageRoute(builder: (context)=> RegisterPage()), (route) => false
+                    MaterialPageRoute(builder: (context)=> const RegisterPage()), (route) => false
                   );
                 },
                 child: const CustomLinkText(text: 'Зарегистрироваться', size: 20),
@@ -46,30 +51,31 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 16),
               CustomFilledButton(
                 text: 'Войти', 
-                onTap: ()async{
-                  
-                  if (passwordController.text == '' ||nameController.text == ''){
-                    if (passwordController.text == ''){
-                      passwordError = 'Вы не ввели пароль';
-                    }
-                    else{
-                      passwordError = '';
-                    }
-                    if (nameController.text == ''){
-                      nameError = 'Вы не ввели имя пользователя';
+                onTap: (){
+                  setState(() {
+                    if (passwordController.text == '' ||nameController.text == ''){
+                      if (passwordController.text == ''){
+                        passwordError = 'Вы не ввели пароль';
+                      }
+                      else{
+                        passwordError = '';
+                      }
+                      if (nameController.text == ''){
+                        nameError = 'Вы не ввели e-mail';
+                      }
+                      else{
+                        nameError = '';
+                      }
                     }
                     else{
                       nameError = '';
-                    }
-                  }
-                  else{
-                    nameError = '';
-                    passwordError = '';
-                    Navigator.pushAndRemoveUntil(
-                        context, 
-                        MaterialPageRoute(builder: (context)=> const HomePage()), (route) => false
+                      passwordError = '';
+                      Navigator.pushAndRemoveUntil(
+                          context, 
+                          MaterialPageRoute(builder: (context)=> const HomePage()), (route) => false
                       );
-                  }
+                    }
+                  });
                 }
               )
             ],
