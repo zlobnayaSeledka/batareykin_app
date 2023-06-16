@@ -85,14 +85,15 @@ class CustomDescriptionText extends StatelessWidget {
 class CustomMidleText extends StatelessWidget {
   final String text;
   final double? size;
-  const CustomMidleText({Key? key, required this.text, this.size}) : super(key: key);
+  final int? maxLines;
+  const CustomMidleText({Key? key, required this.text, this.size, this.maxLines}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      maxLines: 1,
-      softWrap: false,
+      maxLines: maxLines,
+      softWrap: true,
       overflow: TextOverflow.fade,
       style: TextStyle(
         color: ColorTheme.mainTextColor,
