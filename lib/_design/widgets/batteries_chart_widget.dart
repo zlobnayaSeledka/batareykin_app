@@ -70,7 +70,7 @@ class BatteriesChartWidget extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: ((MediaQuery.of(context).size.width-80)/2)+80,
+              width: MediaQuery.of(context).size.width-80,
               child: Column(
                 children: [
                   ChartLegendRow(

@@ -1,8 +1,6 @@
 import 'package:batareykin/_design/widgets/texts.dart';
 import 'package:flutter/material.dart';
 
-import '../color_theme.dart';
-
 class ChartLegendRow extends StatelessWidget {
   final Color color;
   final String title;
@@ -31,9 +29,12 @@ class ChartLegendRow extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 10),
-            CustomMidleText(
-              text: title,
-              size: 20,
+            SizedBox(
+              width: MediaQuery.of(context).size.width-140,
+              child: CustomMidleText(
+                text: title,
+                size: 20,
+              ),
             ),
           ],
         ),

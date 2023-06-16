@@ -1,4 +1,5 @@
 import 'package:batareykin/auth/presentation/view/auth.dart';
+import 'package:batareykin/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const CheckAuth(),
+      home: const HomePage()//const CheckAuth(),
     );
   }
 }

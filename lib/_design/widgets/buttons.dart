@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../design/other_parameters.dart';
 import '../color_theme.dart';
+import '../design_parameters.dart';
 import 'box_with_data.dart';
 import 'texts.dart';
 
