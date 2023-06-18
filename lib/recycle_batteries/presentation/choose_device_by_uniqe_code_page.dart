@@ -1,6 +1,6 @@
 import 'package:batareykin/_design/widgets/buttons.dart';
 import 'package:batareykin/_design/widgets/custom_text_field.dart';
-import 'package:batareykin/user/recycle_batteries/presentation/waiting_for_processing_batteries_page.dart';
+import 'package:batareykin/recycle_batteries/presentation/waiting_for_processing_batteries_page.dart';
 import 'package:flutter/material.dart';
 
 class ChooseDeviceByUniqeCode extends StatelessWidget {

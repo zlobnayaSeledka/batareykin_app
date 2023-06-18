@@ -1,6 +1,6 @@
 import 'package:batareykin/_design/widgets/buttons.dart';
 import 'package:batareykin/_design/widgets/texts.dart';
-import 'package:batareykin/user/recycle_batteries/presentation/accrual_of_points_page.dart';
+import 'package:batareykin/recycle_batteries/presentation/accrual_of_points_page.dart';
 import 'package:flutter/material.dart';
 
 class WaitingForProcessingBatteriesPage extends StatelessWidget {

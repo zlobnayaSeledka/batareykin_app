@@ -1,9 +1,10 @@
 import 'package:batareykin/_design/widgets/batteries_chart_widget.dart';
 import 'package:batareykin/_design/widgets/buttons.dart';
 import 'package:batareykin/_design/widgets/texts.dart';
+import 'package:batareykin/find_high_charged_batteries/presentation/map_with_devices.dart';
 import 'package:batareykin/user/presentation/views/profile_page.dart';
 import 'package:batareykin/user/presentation/views/widgets/users_photo.dart';
-import 'package:batareykin/user/recycle_batteries/presentation/choose_device_by_qr_page.dart';
+import 'package:batareykin/recycle_batteries/presentation/choose_device_by_qr_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -61,7 +62,10 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 15),
                 MenuActionsButtons(
                   title: "Найти заряженные", 
-                  onTap: (){}
+                  onTap: (){
+                    //Navigator.push(context, MaterialPageRoute(builder: ((context) => MapWithDevices())));
+                    Navigator.push(context, MaterialPageRoute(builder: ((context) => MapScreen())));
+                  }
                 ),
                 const SizedBox(height: 15),
                 MenuActionsButtons(
